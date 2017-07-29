@@ -1,0 +1,25 @@
+#REMOVE THIS : start
+# q - questin
+# a - answer
+# ac - correct answer
+#REMOVE THIS : finish
+
+q:When first computer...?
+a:1952
+a:1999
+ac:1961
+
+q:What is Inter product?
+ac:High technology processors
+a:Fresh milk
+a:Computers in all
+
+q:Whas is ASCII Code?
+a:§♣♥ symbols like this
+ac:encoded symbols for computer reading
+a:there is no correct answer
+
+q:Преревірка на підтримку укр. симовлів?
+a:не підтримує
+ас:підтримує
+а:запусти і побачиш
