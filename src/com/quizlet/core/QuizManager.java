@@ -21,5 +21,7 @@ public interface QuizManager {
 	public QuestionBlock getQuizItemById(int id);
 	
 	public boolean setUserAnswerForQuizItem(int quizItemId, int answerId);
+
 	
+	public boolean enterAnswer(int answerId);
 }
