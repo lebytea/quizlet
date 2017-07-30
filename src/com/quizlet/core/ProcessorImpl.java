@@ -14,6 +14,12 @@ public class ProcessorImpl implements Processor{
 	private DataLoader quizLoader;
 	private List<QuestionItem> questionBlockList;
 	
+	public ProcessorImpl(List<QuestionItem> list){
+		System.out.println("Processor init...");
+//		questionBlockList = quizLoader.loadQuizItems();
+		questionBlockList = list;
+	}
+	
 	@Override
 	public List<QuestionItem> getAllQuestionBlocks() {
 		return questionBlockList;
@@ -21,7 +27,12 @@ public class ProcessorImpl implements Processor{
 
 	@Override
 	public QuestionItem getQuestionItemById(int id) {
-		QuestionItem questionBlock = questionBlockList.get(id);
+		QuestionItem questionBlock = null;
+		
+		for(QuestionItem currentQuestionItem : questionBlockList){
+			if(currentQuestionItem.getId() == id)
+				questionBlock = currentQuestionItem;
+		}
 		
 		return questionBlock;
 	}
@@ -46,8 +57,6 @@ public class ProcessorImpl implements Processor{
 	@Override
 	public Map<String, String> getStatisticInformation() {
 		Map<String, String> statistic = new HashMap<>();
-		
-		
 		
 		statistic.put("Correct", countCorrectAnswers() + "");
 		

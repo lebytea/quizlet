@@ -11,6 +11,12 @@ import java.util.List;
 
 public class QuestionBlock extends Item{
 	
+	public QuestionItem(int id, String question, List<Answer> answerList) {
+		super(id, question);
+		this.answerList = answerList;
+		this.userAnswer = userAnswer;
+	}
+
 	private List<Answer> answerList;
 	private Answer userAnswer;
 	
