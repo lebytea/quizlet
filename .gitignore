@@ -142,3 +142,7 @@ vcs.xml
 # Maven
 log/
 target/
+
+# ====================================
+# Write from Andriy Shpulyar
+.idea/
