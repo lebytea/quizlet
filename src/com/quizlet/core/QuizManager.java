@@ -16,10 +16,9 @@ public interface QuizManager {
 	
 	public boolean finishQuiz();
 	
-	public List<QuestionItem> getQuizItemList();
+	public List<QuestionItem> getQuestionList();
 	
-	public QuestionItem getQuizItemById(int id);
+	public QuestionItem selectQuestionById(int questionId);
 	
-	public boolean setUserAnswerForQuizItem(int quizItemId, int answerId);
-	
+	public boolean enterAnswer(int answerId);
 }

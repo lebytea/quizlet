@@ -12,6 +12,8 @@ import java.util.List;
 public class QuestionItem extends Item{
 	
 	private List<Answer> answerList;
+	
+	private Answer userAnswer;
 
 	public List<Answer> getAnswerList() {
 		return answerList;
@@ -30,5 +32,22 @@ public class QuestionItem extends Item{
 		}
 		
 		return correctAnswer;
+	}
+	
+	public Answer getUserAnswer(){
+		return userAnswer;
+	}
+	
+	public boolean setUserAnswer(Answer answer){
+		this.userAnswer = answer;
+		return true;
+	}
+	
+	public boolean hasAnswer(){
+		return userAnswer != null;
+	}
+	
+	public boolean isUserAnswerCorrect(){
+		return this.userAnswer.isCorrect();
 	}
 }
