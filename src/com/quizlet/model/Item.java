@@ -8,6 +8,12 @@ package com.quizlet.model;
 
 public class Item {
 	
+	public Item(int id, String text) {
+		super();
+		this.id = id;
+		this.text = text;
+	}
+
 	private int id;
 	
 	private String text;
