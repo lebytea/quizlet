@@ -2,7 +2,7 @@ package com.quizlet.core;
 
 import java.util.List;
 
-import com.quizlet.model.QuestionItem;
+import com.quizlet.model.QuestionBlock;
 
 /**
  * 
@@ -16,9 +16,9 @@ public interface QuizManager {
 	
 	public boolean finishQuiz();
 	
-	public List<QuestionItem> getQuizItemList();
+	public List<QuestionBlock> getQuizItemList();
 	
-	public QuestionItem getQuizItemById(int id);
+	public QuestionBlock getQuizItemById(int id);
 	
 	public boolean setUserAnswerForQuizItem(int quizItemId, int answerId);
 	

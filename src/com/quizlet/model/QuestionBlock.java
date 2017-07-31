@@ -9,8 +9,16 @@ import java.util.List;
  *
  */
 
-public class QuestionItem extends Item{
-	
+
+
+public class QuestionBlock {
+
+	private int id;
+
+	//question text
+	private String text;
+
+	//list of answers
 	private List<Answer> answerList;
 
 	public List<Answer> getAnswerList() {
@@ -30,5 +38,22 @@ public class QuestionItem extends Item{
 		}
 		
 		return correctAnswer;
+	}
+
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
 	}
 }
