@@ -7,29 +7,29 @@ import java.util.stream.Collectors;
 
 import com.quizlet.loader.DataLoader;
 import com.quizlet.model.Answer;
-import com.quizlet.model.QuestionItem;
+import com.quizlet.model.QuestionBlock;
 
 public class ProcessorImpl implements Processor{
 
 	private DataLoader quizLoader;
-	private List<QuestionItem> questionBlockList;
+	private List<QuestionBlock> questionBlockList;
 	
-	public ProcessorImpl(List<QuestionItem> list){
+	public ProcessorImpl(List<QuestionBlock> list){
 		System.out.println("Processor init...");
 //		questionBlockList = quizLoader.loadQuizItems();
 		questionBlockList = list;
 	}
 	
 	@Override
-	public List<QuestionItem> getAllQuestionBlocks() {
+	public List<QuestionBlock> getAllQuestionBlocks() {
 		return questionBlockList;
 	}
 
 	@Override
-	public QuestionItem getQuestionItemById(int id) {
-		QuestionItem questionBlock = null;
+	public QuestionBlock getQuestionItemById(int id) {
+		QuestionBlock questionBlock = null;
 		
-		for(QuestionItem currentQuestionItem : questionBlockList){
+		for(QuestionBlock currentQuestionItem : questionBlockList){
 			if(currentQuestionItem.getId() == id)
 				questionBlock = currentQuestionItem;
 		}
@@ -39,13 +39,13 @@ public class ProcessorImpl implements Processor{
 
 	@Override
 	public boolean setUsersAnswerToQuestion(int questionId, Answer answer) {
-		QuestionItem questionBlock = getQuestionItemById(questionId);
+		QuestionBlock questionBlock = getQuestionItemById(questionId);
 		
 		return 	questionBlock.setUserAnswer(answer);
 	}
 
 	@Override
-	public List<QuestionItem> getQuestionListWithoutAnswer() {
+	public List<QuestionBlock> getQuestionListWithoutAnswer() {
 		return questionBlockList.stream().filter(q -> !q.hasAnswer()).collect(Collectors.toList());
 	}
 

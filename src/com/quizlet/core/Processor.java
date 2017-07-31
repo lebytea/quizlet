@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.quizlet.model.Answer;
-import com.quizlet.model.QuestionItem;
+import com.quizlet.model.QuestionBlock;
 
 /**
  * 
@@ -18,12 +18,12 @@ public interface Processor {
 	/*
 	 * Method returns list of QuestionBlock	
 	 */
-	public List<QuestionItem> getAllQuestionBlocks();
+	public List<QuestionBlock> getAllQuestionBlocks();
 	
 	/*
 	 * Returns Question entity by ID
 	 */
-	public QuestionItem getQuestionItemById(int id);
+	public QuestionBlock getQuestionItemById(int id);
 	
 	/*
 	 * Set user answer to QuestionBlock
@@ -33,7 +33,7 @@ public interface Processor {
 	/*
 	 * Returns list of QuestionBlock without answers
 	 */
-	public List<QuestionItem> getQuestionListWithoutAnswer();
+	public List<QuestionBlock> getQuestionListWithoutAnswer();
 	
 	/*
 	 * Process finished quiz and gather statistic information about it
