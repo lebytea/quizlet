@@ -9,20 +9,17 @@ import java.util.List;
  *
  */
 
-public class QuestionBlock extends Item{
-	
+
+
+public class QuestionBlock {
+
+	private int id;
+
+	//question text
+	private String text;
+
+	//list of answers
 	private List<Answer> answerList;
-	private Answer userAnswer;
-	
-	public QuestionBlock(int id, String question, List<Answer> answerList) {
-		super(id, question);
-		this.answerList = answerList;
-	}
-	
-	public QuestionBlock(int id, String question, List<Answer> answerList, Answer userAnswer) {
-		super(id, question);
-		this.answerList = answerList;
-	}
 
 	public List<Answer> getAnswerList() {
 		return answerList;
@@ -42,21 +39,21 @@ public class QuestionBlock extends Item{
 		
 		return correctAnswer;
 	}
-	
-	public Answer getUserAnswer(){
-		return userAnswer;
+
+
+	public int getId() {
+		return id;
 	}
-	
-	public boolean setUserAnswer(Answer answer){
-		this.userAnswer = answer;
-		return true;
+
+	public void setId(int id) {
+		this.id = id;
 	}
-	
-	public boolean hasAnswer(){
-		return userAnswer != null;
+
+	public String getText() {
+		return text;
 	}
-	
-	public boolean isUserAnswerCorrect(){
-		return this.userAnswer.isCorrect();
+
+	public void setText(String text) {
+		this.text = text;
 	}
 }
