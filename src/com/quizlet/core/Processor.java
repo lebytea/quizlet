@@ -6,6 +6,7 @@ import java.util.Map;
 import com.quizlet.model.Answer;
 import com.quizlet.model.QuestionBlock;
 
+
 /**
  * 
  * @author jarc0der
@@ -19,11 +20,14 @@ public interface Processor {
 	 * Method returns list of QuestionBlock	
 	 */
 	public List<QuestionBlock> getAllQuestionBlocks();
+
 	
 	/*
 	 * Returns Question entity by ID
 	 */
+
 	public QuestionBlock getQuestionItemById(int id);
+
 	
 	/*
 	 * Set user answer to QuestionBlock
@@ -33,6 +37,7 @@ public interface Processor {
 	/*
 	 * Returns list of QuestionBlock without answers
 	 */
+
 	public List<QuestionBlock> getQuestionListWithoutAnswer();
 	
 	/*

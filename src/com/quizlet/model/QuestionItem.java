@@ -9,20 +9,17 @@ import java.util.List;
  *
  */
 
-public class QuestionBlock extends Item{
+public class QuestionItem extends Item{
 	
+	public QuestionItem(int id, String question, List<Answer> answerList) {
+		super(id, question);
+		this.answerList = answerList;
+		this.userAnswer = userAnswer;
+	}
+
 	private List<Answer> answerList;
+	
 	private Answer userAnswer;
-	
-	public QuestionBlock(int id, String question, List<Answer> answerList, Answer userAnswer) {
-		super(id, question);
-		this.answerList = answerList;
-	}
-	
-	public QuestionBlock(int id, String question, List<Answer> answerList) {
-		super(id, question);
-		this.answerList = answerList;
-	}
 
 	public List<Answer> getAnswerList() {
 		return answerList;

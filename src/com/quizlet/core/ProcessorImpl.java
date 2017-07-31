@@ -9,12 +9,14 @@ import com.quizlet.loader.DataLoader;
 import com.quizlet.model.Answer;
 import com.quizlet.model.QuestionBlock;
 
+
 public class ProcessorImpl implements Processor{
 
 	private DataLoader quizLoader;
 	private List<QuestionBlock> questionBlockList;
 	
 	public ProcessorImpl(List<QuestionBlock> list){
+
 		System.out.println("Processor init...");
 //		questionBlockList = quizLoader.loadQuizItems();
 		questionBlockList = list;
