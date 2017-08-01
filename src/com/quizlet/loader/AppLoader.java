@@ -1,5 +1,6 @@
 package com.quizlet.loader;
 import com.quizlet.model.Answer;
+import com.quizlet.model.AnswerType;
 import com.quizlet.model.QuestionBlock;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
@@ -128,11 +129,18 @@ public class AppLoader implements DataLoader {
                //формуємо об"єкт "відповідь" для активного блоку "питання"
                if (!flagWhatIsPrewLine.equals("q:")) {
                    ++IdAnswer;
-                   Answer answerListTempX = new Answer();
-                   answerListTempX.setId(IdAnswer);
+                   AnswerType prewTrueAnswerAdd ;
+                   if (trueAnswer==true){
+                       prewTrueAnswerAdd = AnswerType.CORRECT;
+                   }else prewTrueAnswerAdd = AnswerType.WRONG;
+                   Answer answerListTempX = new Answer(IdAnswer,textInfoLine, prewTrueAnswerAdd );
+
+                   //Закрив, бо раніше клас працював через сеттери
+                   /*answerListTempX.setId(IdAnswer);
                    answerListTempX.setText(textInfoLine);
-                   answerListTempX.setAnswerType(prewTrueAnswer);
+                   answerListTempX.setAnswerType(prewTrueAnswer);*/
                    answerList.add(answerListTempX);
+                   System.out.println();
                }
 
                //формуємо об"єкт "Блок" для активного блоку "питання"
