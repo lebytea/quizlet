@@ -2,7 +2,6 @@ package com.quizlet.loader;
 
 import java.util.List;
 
-
 import com.quizlet.model.QuestionBlock;
 
 public interface DataLoader {

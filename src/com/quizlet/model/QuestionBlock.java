@@ -20,6 +20,17 @@ public class QuestionBlock {
 
 	//list of answers
 	private List<Answer> answerList;
+	private Answer userAnswer;
+	
+	public QuestionBlock(int id, String question, List<Answer> answerList, Answer userAnswer) {
+		super(id, question);
+		this.answerList = answerList;
+	}
+	
+	public QuestionBlock(int id, String question, List<Answer> answerList) {
+		super(id, question);
+		this.answerList = answerList;
+	}
 
 	public List<Answer> getAnswerList() {
 		return answerList;
