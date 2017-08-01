@@ -16,8 +16,6 @@ public class Answer extends Item{
 	//private int id;
 	//private String text;
 
-	private int id;
-	private String text;
 
 	private AnswerType answerType;
 
