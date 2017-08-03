@@ -9,16 +9,8 @@ import java.util.List;
  *
  */
 
+public class QuestionBlock extends Item{
 
-
-public class QuestionBlock {
-
-	private int id;
-
-	//question text
-	private String text;
-
-	//list of answers
 	private List<Answer> answerList;
 	private Answer userAnswer;
 	
@@ -40,6 +32,14 @@ public class QuestionBlock {
 		this.answerList = answerList;
 	}
 	
+	public Answer getUserAnswer() {
+		return userAnswer;
+	}
+
+	public void setUserAnswer(Answer userAnswer) {
+		this.userAnswer = userAnswer;
+	}
+
 	public Answer getCorrectAnswer(){
 		Answer correctAnswer = null;
 		
@@ -50,21 +50,12 @@ public class QuestionBlock {
 		
 		return correctAnswer;
 	}
-
-
-	public int getId() {
-		return id;
+	
+	public boolean hasUserAnswer(){
+		return userAnswer != null;
 	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getText() {
-		return text;
-	}
-
-	public void setText(String text) {
-		this.text = text;
+	
+	public boolean isUserAnswerCorrect(){
+		return userAnswer.isCorrect();
 	}
 }

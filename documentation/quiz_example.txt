@@ -1,0 +1,19 @@
+﻿q:When first computer...?
+a:1952
+a:1999
+r:1961
+
+q:What is Inter product?
+r:High technology processors
+a:Fresh milk
+a:Computers in all
+
+q:Whas is ASCII Code?
+a:§♣♥ symbols like this
+r:encoded symbols for computer reading
+a:there is no correct answer
+
+q:Check for UA sybmols
+a:don't supper
+r:support
+a:load and see

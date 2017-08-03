@@ -42,13 +42,14 @@ public class ProcessorImpl implements Processor{
 	@Override
 	public boolean setUsersAnswerToQuestion(int questionId, Answer answer) {
 		QuestionBlock questionBlock = getQuestionItemById(questionId);
+		questionBlock.setUserAnswer(answer);
 		
-		return 	questionBlock.setUserAnswer(answer);
+		return 	true;
 	}
 
 	@Override
 	public List<QuestionBlock> getQuestionListWithoutAnswer() {
-		return questionBlockList.stream().filter(q -> !q.hasAnswer()).collect(Collectors.toList());
+		return questionBlockList.stream().filter(q -> !q.hasUserAnswer()).collect(Collectors.toList());
 	}
 
 	@Override

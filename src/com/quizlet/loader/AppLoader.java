@@ -3,8 +3,10 @@ import com.quizlet.model.Answer;
 import com.quizlet.model.AnswerType;
 import com.quizlet.model.QuestionBlock;
 import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,31 +15,26 @@ import java.util.List;
  */
 public class AppLoader implements DataLoader {
 
+	//add parser Interface
+	
    @Override
    public List<QuestionBlock> loadQuizItems(String pathSource) {
 
        String filePath = pathSource;
-        /*
-        Файл з блоками питаннь має мати чітку символьну структуру
-        q:Текст запитання.
-        a:відповідь.
-        a:відповідь.
-        r:правильна відповідь
-        a:відповідь.
-
-        Примітка_1:(правильна відповідь з міткою "r:" не має значення на якій саме позиції вона знаходиться,
-            хоча для спрощення стоворення алгоритму парсера, можна було її поставити пунктом 1.:(
-        Примітка_2: Відділення блоків питань між собою через ентер. Між блоками одна пуста лінія, яка створюється ентером і не повинна містити ніяких символів.
-
-         */
 
        //create burrefedread from file
+       //StringBuilder is better 
        StringBuffer myStringBuff = new StringBuffer();
        String stringQuiz = "";
 
        try (FileInputStream myFile = new FileInputStream(filePath);
             BufferedInputStream myBuff = new BufferedInputStream(myFile);) {
 
+    	   
+    	   BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath)));
+    	   reader.readLine();
+    	   
+    	   
            int ch;
            while ((ch = myBuff.read()) > -1) {
                myStringBuff.append((char) ch);
@@ -145,11 +142,7 @@ public class AppLoader implements DataLoader {
 
                //формуємо об"єкт "Блок" для активного блоку "питання"
                if (flagWhatIsLine.equals("q:")) {
-                   tempQuestionBlock = new QuestionBlock();
-                   tempQuestionBlock.setId(IdBlock);
-                   tempQuestionBlock.setText(textPrewQuestion);
-                   tempQuestionBlock.setAnswerList(answerList);
-                   resultQuestionBlock.add(tempQuestionBlock);
+                   tempQuestionBlock = new QuestionBlock(IdBlock, textPrewQuestion, answerList);
 
                    //створюємо коллекцію для наступного блоку відповідей
                    answerList = new ArrayList<>();
