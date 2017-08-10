@@ -30,8 +30,9 @@ public class FileParser implements Parser{
 		
 		try{
 			while((currentLine = reader.readLine()) != null){
+
 				if(isQuestionBlockStart(currentLine)){
-					System.out.println("OUTER: " + currentLine);
+					//System.out.println("OUTER: " + currentLine);
 					String lineWithoutPreffix = clearPreffix(currentLine);
 					QuestionBlock questionBlock = createQuestionBlock(++questionId, lineWithoutPreffix, reader);
 					questionBlockList.add(questionBlock);
@@ -52,7 +53,7 @@ public class FileParser implements Parser{
 		List<Answer> answerList = new ArrayList<>();
 		
 		while(!(currentLine = reader.readLine()).isEmpty()){
-			System.out.println("INNER:" + currentLine);
+			//System.out.println("INNER:" + currentLine);
 			
 			String cleanAnswer = clearPreffix(currentLine);
 			
@@ -64,7 +65,6 @@ public class FileParser implements Parser{
 			
 			answerList.add(answer);
 		}
-		
 		QuestionBlock question = new QuestionBlock(questionId,questionName, answerList);
 
 		return question;

@@ -1,0 +1,27 @@
+q:What is your name? (1_question)
+a:Andriy Shpylyar
+a:Sergiy sdfadfjak sfdafs
+r:Jony sdfsj skajsd;l
+a:Prizrak sfdskl
+
+q:Where do you live? (2_question)
+a:Kiev
+a:USA - country.
+r: 7Times: Paris Paris Paris Paris Paris Paris Paris
+a:Berlin sity.
+a:On the Street
+
+q:What do you Want?(3_question)
+a:Much - or little.
+r: Anything.
+a:More and more and more:
+Exelent but not very some...(test for mistake - new abzac)
+r:Dog of Barbos
+
+q:Where do you want live?(4_question)
+a:Kiev
+r:USA
+a:Paris
+r:Berlin
+r:Street in the night: in the end of text - there must be_one_finish_point.
+
