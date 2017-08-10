@@ -146,3 +146,4 @@ target/
 # ====================================
 # Write from Andriy Shpulyar
 .idea/
+# Here probably need to do change, that to have access till new lib (Junit+ and other)
